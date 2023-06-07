@@ -9,6 +9,16 @@ class Queue(AbstractQueue):
     def __len__(self):
         return self._tamanho
 
+    def __str__(self):
+        str_items = ""
+        for i in range(len(self._queue)):
+            value = self._queue[i]
+            str_items += str(value)
+            if i + 1 < len(self._queue):
+                str_items += ", "
+
+        return "Queue(" + str_items + ")"
+
     def enqueue(self, value):
         self._queue.append(value)
         self._tamanho += 1
