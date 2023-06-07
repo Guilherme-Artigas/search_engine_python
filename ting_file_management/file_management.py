@@ -14,6 +14,3 @@ def txt_importer(path_file):
         return line_list
     except Exception:
         return print(f"Arquivo {path_file} não encontrado", file=sys.stderr)
-
-
-txt_importer("ting_file_management/teste.csv")
