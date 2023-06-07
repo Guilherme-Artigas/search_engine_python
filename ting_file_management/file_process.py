@@ -32,9 +32,8 @@ def remove(instance):
 
 
 def file_metadata(instance, position):
-    """Aqui irá sua implementação"""
-    # .1 - Será validado que ao executar a função file_metadata com sucesso
-    # deverá exibir a mensagem correta via stdout
-
-    # 5.2 - Será validado que ao executar a função file_metadata com posição
-    # inválida deverá exibir a mensagem correta via stderr
+    try:
+        file = instance.search(position)
+        return print(file, file=sys.stdout)
+    except Exception:
+        print("Posição inválida", file=sys.stderr)
