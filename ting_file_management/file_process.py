@@ -22,12 +22,13 @@ def process(path_file, instance):
 
 
 def remove(instance):
-    """Aqui irá sua implementação"""
-    # 4.1 - Será validado que ao executar a função remove com sucesso deverá
-    # exibir mensagem correta via stdout
+    if instance.__len__() == 0:
+        return print("Não há elementos", file=sys.stdout)
 
-    # 4.2 - Será validado que ao executar a função remove um arquivo
-    # inexistente deverá exibir a mensagem correta via stdout
+    file = instance.dequeue()
+    path_file = file["nome_do_arquivo"]
+
+    return print(f"Arquivo {path_file} removido com sucesso", file=sys.stdout)
 
 
 def file_metadata(instance, position):
