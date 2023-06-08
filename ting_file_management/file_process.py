@@ -14,11 +14,15 @@ def process(path_file, instance):
         instance.enqueue(report_dict)
         print(report_dict, file=sys.stdout)
 
+    list_files = []
+
     for i in range(0, instance.__len__()):
         file = instance.search(i)
-        if path_file != file["nome_do_arquivo"]:
-            instance.enqueue(report_dict)
-            print(report_dict, file=sys.stdout)
+        list_files.append(file["nome_do_arquivo"])
+
+    if path_file not in list_files:
+        instance.enqueue(report_dict)
+        print(report_dict, file=sys.stdout)
 
 
 def remove(instance):
