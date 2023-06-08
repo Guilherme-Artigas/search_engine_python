@@ -1,22 +1,23 @@
 def exists_word(word, instance):
-    """Aqui irá sua implementação"""
-    # 7.1 - Será validado que ao executar a função exists_word com sucesso
-    # deverá retornar a estrutura correta
+    occurrence_list = []
+    occ = {}
+    occ["palavra"] = ""
+    occ["arquivo"] = ""
+    occ["ocorrencias"] = []
+    count = 1
 
-    # 7.2 - Será validado que ao executar a função exists_word com palavra
-    # inexistente deverá retornar uma lista vazia
-
-    # 7.3 - Será validado que ao executar a função exists_word a fila original
-    # não deverá ser alterada
+    for i in range(0, instance._tamanho):
+        for linha in instance._queue[i]["linhas_do_arquivo"]:
+            if str(word).lower() in str(linha).lower():
+                occ["palavra"] = word
+                occ["arquivo"] = instance._queue[i]["nome_do_arquivo"]
+                occ["ocorrencias"].append({"linha": count})
+                if len(occurrence_list) == 0:
+                    occurrence_list.append(occ)
+            count += 1
+        count = 1
+    return occurrence_list
 
 
 def search_by_word(word, instance):
-    """Aqui irá sua implementação"""
-    # 8.1 - Será validado que ao executar a função search_by_word com sucesso
-    # deverá retornar a estrutura correta
-
-    # 8.2 - Será validado que ao executar a função search_by_word com palavra
-    # inexistente deverá retornar uma lista vazia
-
-    # 8.3 - Será validado que ao executar a função search_by_word a fila
-    # original não deverá ser alterada
+    ...
